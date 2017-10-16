@@ -205,17 +205,33 @@ $(document).ready(function(){
 
   	//##################### scrolling div animations ###########################
 
-  	$(document).ready(function() {
-        $('.post').addClass("hidden-2").viewportChecker({
-            classToAdd: 'visible animated fadeInUp', // Class to add to the elements when they are visible
-            offset: 100    
-           });  
-
-         $('.post-2').addClass("hidden-2").viewportChecker({
-            classToAdd: 'visible animated fadeInRightBig', // Class to add to the elements when they are visible
-            offset: 100    
-           });      
-    });     
+  	$(function(){
+  var $elems = $('.animateblock');
+  var winheight = $(window).height();
+  var fullheight = $(document).height();
+  
+  $(window).scroll(function(){
+    animate_elems();
+  });
+  
+  function animate_elems() {
+    wintop = $(window).scrollTop(); // calculate distance from top of window
+ 
+    // loop through each item to check when it animates
+    $elems.each(function(){
+      $elm = $(this);
+      
+      if($elm.hasClass('animated')) { return true; } // if already animated skip to the next item
+      
+      topcoords = $elm.offset().top; // element's distance from top of page in pixels
+      
+      if(wintop > (topcoords - (winheight*.75))) {
+        // animate when top of the window is 3/4 above the element
+        $elm.addClass('animated');
+      }
+    });
+  } // end animate_elems()
+});     
 	
 
   	$("#box").click(function(){
@@ -225,9 +241,20 @@ $(document).ready(function(){
   			scrollTop: $(this).scrollTop() + 500
   			},"slow")
 
-  	})
+  	});
 
 });
+
+
+
+
+
+
+
+
+
+
+
 
 
 

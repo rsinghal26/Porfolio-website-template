@@ -375,7 +375,7 @@ html, body {
     background-size: cover;
     text-align: center;
     padding-top: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
 }
 
 #heading-3{
@@ -655,4 +655,10 @@ footer{
 span{
 
 	color: white;
+}
+
+
+.detail i{
+
+	color: #CCA969;
 }
