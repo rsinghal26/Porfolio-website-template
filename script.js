@@ -245,11 +245,20 @@ $(document).ready(function(){
 
 });
 
+//------------------------------------
 
 
-
-
-
+$('#work .btn').hover(
+    function() {
+        var $this = $(this); // caching $(this)
+        $this.data('defaultText', $this.text());
+        $this.text("More Details");
+    },
+    function() {
+        var $this = $(this); // caching $(this)
+        $this.text($this.data('defaultText'));
+    }
+);
 
 
 

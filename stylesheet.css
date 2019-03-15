@@ -532,6 +532,7 @@ html, body {
 	border:1px solid #721C47;
 	transition: 1s;
 	text-align: center;
+	width: 200PX;
 }
 
 .btn:hover{
@@ -540,8 +541,6 @@ html, body {
 	box-shadow: 10px -10px 5px black;
 	transition: box-shadow 1s, background-color 2s;
 	border:none;
-
-
 }
 
 /*########################### HIRE ME SECTION#############################*/
